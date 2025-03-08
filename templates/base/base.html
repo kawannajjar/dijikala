@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %} فروشگاه اینترنتی کاوان کالا {% endblock %}
+
+    </title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
+    {% block document_head %}{% endblock document_head %}
+</head>
+<body>
+<div>
+    <nav>
+        <ul>
+            <li>
+                <a href="/products/"> Home  Page </a>
+            </li>
+            {% for category in categories %}
+            <li><a href="/categories/{{ category.slug }}">{{ category.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </nav>
+</div>
+{% block main %} {% endblock main %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    لیست کالا
+{% endblock %}
+<ul>
+    {% block main %}
+        {% for p in products %}
+            <li>
+                <a href="/products/{{ p.id }}/">
+                    <div>
+                        <h3>{{ p.name }}</h3>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endblock %}

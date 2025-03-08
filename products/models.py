@@ -29,7 +29,7 @@ class Category(models.Model):
         verbose_name_plural = _("Categories")
 
     def __str__(self):
-        return f"{self.slug} : {self.name}"
+        return f"{self.slug}"
 
 class Comments(models.Model):
     title = models.CharField(_("Title"),max_length=150)
@@ -120,8 +120,8 @@ class ProductPrice(models.Model):
                                 on_delete=models.CASCADE
                                     )
     price = models.PositiveSmallIntegerField(_("Price"))
-    create_at = models.DateTimeField(_("datetime"), auto_now=False, auto_now_add=True)
-    update_at = models.DateTimeField(_("datetime"), auto_now=True, auto_now_add=False)
+    create_at = models.DateTimeField(_("Datetime create"), auto_now=False, auto_now_add=True)
+    update_at = models.DateTimeField(_("Datetime Update"), auto_now=True, auto_now_add=False)
 
     class Meta:
         verbose_name = _("ProductPrice")
